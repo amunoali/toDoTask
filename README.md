@@ -3,7 +3,7 @@ https://github.com/amunoali/toDoTask.git
 # To Do List App
 A easy to use to list app that lets you list out all of your important tasks for the day
 
- <img src="/images/toDoList.png">
+ <img src="./public/images/toDoList.png">
 
 
 ## How It's Made:
