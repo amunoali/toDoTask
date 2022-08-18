@@ -16,12 +16,12 @@
         <section class="todo">
             <h1 id="heading">Edit List Item </h1>
             <ul class="todo-list">
-                <% toDoTask.forEach(task=> { %>
-                    <% if (task._id==idTask) { %>
+                <% toDoTask.forEach(details=> { %>
+                    <% if (details._id==idTask) { %>
                         <li class="todo-list-item item">
-                            <form action="/edit/<%= task._id %>" method="POST">
-                                <input type="text" value="<%= task.title %>" name="title">
-                                <input type="text" value="<%= task.content %>" name="content">
+                            <form action="/edit/<%= details._id %>" method="POST">
+                                <input type="text" value="<%= details.title %>" name="title">
+                                <input type="text" value="<%= details.content %>" name="content">
                                 <button type="submit" class="confirm">Confirm</button>
                                 <a href="/" class="cancel">Cancel</a>
                             </form>
@@ -30,16 +30,16 @@
                             <li class="todo-list-item item" >
                                 <div class="flex">
                                  <div class="todo-list-item-title">
-                                     <%= task.title %>
+                                     <%= details.title %>
                                  </div>
                                  <div class="edita">
-                                     <a href="/edit/<%=task._id %>" class="edit"> <span class="fas fa-edit">  </span></a>
-                                     <a href="/remove/<%=task._id %>" class="edit"> <span class="fas fa-times">  </span></a>
+                                     <a href="/edit/<%=details._id %>" class="edit"> <span class="fas fa-edit">  </span></a>
+                                     <a href="/remove/<%=details._id %>" class="edit"> <span class="fas fa-times">  </span></a>
                                  </div>
                                  
                                 </div>
                                  <div class="todo-list-item-content ">
-                                     <%= task.content %>
+                                     <%= details.content %>
                                  </div>
                              </li>
                             <% } %>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +16,7 @@
     integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
 </head>
+
 <body>
    
     <section class="todo-container box item">   
@@ -23,33 +24,31 @@
             <h1 id="heading">To Do List</h1>
            
             <ul class="todo-list " >
-                <% todoTask.forEach(task => {%>
+                <% todoTasks.forEach(details => { %>
                 <li class="todo-list-item item" >
                    <div class="flex">
                     <div class="todo-list-item-title">
-                        <%= task.title %>
+                        <%= details.title %>
                     </div>
                     <div class="edita">
-                        <a href="/edit/<%=task._id %>" class="edit"> <span class="fas fa-edit">  </span></a>
-                        <a href="/remove/<%=task._id %>" class="edit"> <span class="fas fa-times">  </span></a>
+                        <a href="/edit/<%=details._id %>" class="edit"> <span class="fas fa-edit">  </span></a>
+                        <a href="/edit/remove/<%=details._id %>" class="edit"> <span class="fas fa-times">  </span></a>
                     </div>
                     
                    </div>
                     <div class="todo-list-item-content ">
-                        <%= task.content %>
+                        <%= details.content %>
                     </div>
                 </li>
                <%  }) %>
             </ul>
+
             <form action="/" method="POST" class="todo-header">
                 <input type="text" name="title" placeholder="Enter a New Item">
                 <input type="text" name="content" placeholder="Enter Details">
-                <!-- <textarea name="content" cols="40" rows="6">Content</textarea> -->
                <br>
                 <button type="submit" class="submit">+</button>
-                
             </form>
         </section>
     </section>
 </body>
-</html>
